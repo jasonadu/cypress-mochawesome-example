@@ -157,3 +157,4 @@ $RECYCLE.BIN/
 mochawesome-report/
 cypress/screenshots/
 cypress/videos/
+mochawesome.json
