@@ -3,6 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "test": "yarn test:run && yarn test:report",
+    "test:run": "rm -rf mochawesome-report cypress/screenshots cypress/videos && cypress run",
+    "test:report": "rm -rf cypress/report && mkdir cypress/report && yarn test:merge && yarn test:marge",
+    "test:merge": "mochawesome-merge > cypress/report/mochawesome.json",
+    "test:marge": "marge cypress/report/mochawesome.json -o cypress/report"
+  },
   "devDependencies": {
     "cypress": "^3.1.5",
     "mocha": "^5.2.0",
